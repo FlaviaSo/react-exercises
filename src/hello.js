@@ -1,7 +1,18 @@
 import React from 'react'
 
 export class Hello extends React.Component {
-    render(){
-        return <h1>Hello, World!</h1>
+    render() {
+        return (
+            <>
+                <h1>Hello, World!</h1>
+                <Message />
+            </>
+        )
     }
+}
+
+export const Message = () => {
+    return(
+        <p>What a beautiful day!</p>
+    )
 }
