@@ -11,6 +11,6 @@ export class App extends React.Component{
 
 }
 
-/* Can you use the Hello component more than once in the App component? What happens if you do? */
+/* Can you render the Message component directly within the App component? What happens if you do? */
 
-/* Il componente "Hello può essere riutilizzato più volte nella classe "App", ma, creando classi diverse e utilizzando il componente "Hello", questo verrà renderizzato solo una volta. */
+/* Se inserisco il componente "Message" all'interno del componente "App", il terminale mi da un errore.*/
