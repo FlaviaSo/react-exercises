@@ -11,6 +11,9 @@ export class App extends React.Component{
 
 }
 
-/* Can you render the Message component directly within the App component? What happens if you do? */
 
+//-08
+/* Il componente "Hello può essere riutilizzato più volte nella componente "App", verrà renderizzato ogni volta. */
+
+//-09
 /* Se inserisco il componente "Message" all'interno del componente "App", il terminale mi da un errore.*/
