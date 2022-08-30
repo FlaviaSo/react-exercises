@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Message} from './Message';
 
 export class Hello extends React.Component {
     render() {
@@ -20,10 +21,4 @@ export class Hello extends React.Component {
             </>
         )
     }
-}
-
-export const Message = () => {
-    return(
-        <p>What a beautiful day!</p>
-    )
 }
