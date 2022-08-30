@@ -4,8 +4,8 @@ import {Message} from './Message'
 
 export class Hello extends React.Component {
     render() {
-        //component-06
-        /*
+        /*component-06
+    
         return (
             <>
                 <h1>Hello, World!</h1>     

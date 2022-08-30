@@ -7,15 +7,17 @@ export class App extends React.Component{
         return (
             <div>
                 <Hello />
-                <Welcome name="Flavia"/>
-            </div>)
+                <Welcome name={""} />
+            </div>
+            )
     }
 
 }
 
 
-//-08
+//Component-08
 /* Il componente "Hello può essere riutilizzato più volte nella componente "App", verrà renderizzato ogni volta. */
 
-//-09
+//Component-09
 /* Se inserisco il componente "Message" all'interno del componente "App", il terminale mi da un errore.*/
+
