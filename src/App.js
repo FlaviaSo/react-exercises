@@ -1,25 +1,25 @@
-import React from "react";
-import {Hello} from './Hello';
-import {Welcome} from './Welcome';
-import {Counter} from './Counter'
+import logo from './logo.svg';
+import './App.css';
 
-export class App extends React.Component{
-    render(){
-        return (
-            <div>
-                <Hello />
-                <Welcome age={27}/>
-                <Counter initialValue={0} incrementBy={1} timeout={1000}/>
-            </div>
-            )
-    }
-
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-
-//Component-08
-/* Il componente "Hello può essere riutilizzato più volte nella componente "App", verrà renderizzato ogni volta. */
-
-//Component-09
-/* Se inserisco il componente "Message" all'interno del componente "App", il terminale mi da un errore.*/
-
+export default App;
