@@ -1,4 +1,5 @@
 import React from 'react';
+import {CounterDisplay} from "./CounterDisplay"
 
 export class Counter extends React.Component {
     state = {
@@ -21,7 +22,7 @@ export class Counter extends React.Component {
         return(
             <>
             <h1>
-                Counter: {this.state.count}
+                <CounterDisplay variabileState={this.state.count}/>
             </h1>
             </>
         )
