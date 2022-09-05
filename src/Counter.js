@@ -23,6 +23,10 @@ export class Counter extends React.Component {
         this.timerId = setInterval(() => this.tick(), 1000);
     }
 
+    componentWillUnmount(){
+        clearInterval(this.timerId);
+    }
+
     tick(){
         this.setState({
             count: this.state.count + this.props.incrementBy,
