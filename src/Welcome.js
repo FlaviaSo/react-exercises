@@ -7,6 +7,11 @@ export class Welcome extends React.Component {
             <>
                 <p>Welcome, {this.props.name}!</p>
                 {/*{this.props.age >= 18 && <Age age={this.props.age}/>}*/}
+                {/*{this.props.age > 18 && this.props.age < 65 && (
+                  <p>
+                       <Age age={this.props.age} />
+                  </p>
+                 )}*/}
                 {/*{this.props.age >= 18 && <Age age={this.props.age}/>}*/}
                 {/*{this.props.age && <Age age={this.props.age}/>}*/}
                 {/*{this.props.age > 18 && this.props.age < 65 && <Age age={this.props.age}/>}*/}
