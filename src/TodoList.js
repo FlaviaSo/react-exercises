@@ -15,6 +15,12 @@ export class TodoList extends React.Component {
     }));
   };
 
+  handleResetButton = e =>{
+    this.setState((state) => ({
+        todos: (state.todos = [""])
+    }))
+  }
+
   render() {
     return (
       <>
@@ -26,6 +32,7 @@ export class TodoList extends React.Component {
 
         <input ref={this._inputRef}></input>
         <button onClick={this.handleTodoUpdate}>Aggiungi Chore</button>
+        <button type="reset" onClick={this.handleResetButton}>Reset</button>
       </>
     );
   }
