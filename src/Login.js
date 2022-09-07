@@ -9,8 +9,12 @@ export class Login extends React.Component{
 
     handleInput = e => {
         const name = e.target.name
+        const value = e.target.value
+        const type = e.target.type
+        const checked = e.target.checked
+
         this.setState({
-            [name]: e.target.type === "checkbox" ? e.target.checked : e.target.value,
+            [name]: type === "checkbox" ? checked : value,
         })
     }
 
@@ -18,11 +22,11 @@ export class Login extends React.Component{
         return(
             <>
                 <label>Username</label>
-                <input type="text" name="username" value={this.state.username} onChange={this.handleInput}/>
+                <input type="text" name="username" value={this.state.username} onChange={this.handleInput}/><br></br>
                 <label>Password</label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleInput}/>
-                <label>Remember me?</label>
-                <input type="checkbox" name="remember" value={this.state.remember} onChange={this.handleInput}/>
+                <input type="password" name="password" value={this.state.password} onChange={this.handleInput}/><br></br>
+                <label>Remember</label>
+                <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInput}/>
             </>
         )
     }
