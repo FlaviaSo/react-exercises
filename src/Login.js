@@ -19,7 +19,7 @@ export class Login extends React.Component{
         })
     }
 
-    onLogin = e => {
+    onLogin = () => {
         this.setState({
             login: true
         })
@@ -32,7 +32,6 @@ export class Login extends React.Component{
             remember: false,
         })
     }
-
     render(){
         return(
             <>
