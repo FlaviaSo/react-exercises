@@ -7,8 +7,8 @@ export class Colors extends React.Component{
         return(
             <div>
                 <ul>
-                    {this.props.colors.map((color) => (
-                    <li>{color}</li>
+                    {this.props.items.map((items) => (
+                    <li>{items}</li>
                     ))}
                 </ul>
             </div>
