@@ -8,6 +8,7 @@ import {InteractiveWelcome} from "./InteractiveWelcome"
 import {Login} from "./Login"
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import {Colors} from "./Colors"
+import {TodoList} from "./TodoList";
 
 export class App extends React.Component{
     render(){
@@ -30,6 +31,9 @@ export class App extends React.Component{
                 <UncontrolledLogin />
                 </div>
                 <Colors items={[{id:1,name:'Red'}, {id:2,name:'Green'}, {id:3, name:'Blue'}]}/>
+                <div>
+                    <TodoList />
+                </div>
             </div>
             )
     }
