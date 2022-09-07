@@ -7,6 +7,7 @@ import {ClickTracker} from "./ClickTracker"
 import {InteractiveWelcome} from "./InteractiveWelcome"
 import {Login} from "./Login"
 import { UncontrolledLogin } from "./UncontrolledLogin";
+import {Colors} from "./Colors"
 
 export class App extends React.Component{
     render(){
@@ -28,6 +29,7 @@ export class App extends React.Component{
                 <div>
                 <UncontrolledLogin />
                 </div>
+                <Colors colors={['Red', 'Green', 'Blue']}/>
             </div>
             )
     }
