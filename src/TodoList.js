@@ -8,9 +8,10 @@ export class TodoList extends React.Component {
   handleTodoUpdate = (event) => {
     const name = event.target.name;
     const todo = this._inputRef.current.value;
+    const reset = this._inputRef.current.value = "";
 
     this.setState(() => ({
-      [name]: this.state.todos.push(todo),
+      [name]: todo !== "" ? this.state.todos.push(todo) : reset,
     }));
   };
 
