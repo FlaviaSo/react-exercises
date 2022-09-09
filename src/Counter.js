@@ -41,10 +41,16 @@ export class Counter extends React.Component {
         });
     }
 
+
     render(){
+        const CounterStyle = {
+            backgroundColor: '#333',
+            color: 'white',
+            margin: '10px 20px',
+        }
         return(
             <>
-            <h1>
+            <h1 style={CounterStyle}>
                 <CounterDisplay variabileState={this.state.count}/>
             </h1>
             </>
