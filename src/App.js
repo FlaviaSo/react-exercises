@@ -9,6 +9,8 @@ import {Login} from "./Login"
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import {Colors} from "./Colors"
 import {TodoList} from "./TodoList";
+import {Container} from "./Container";
+import {Message} from "./Message"
 
 export class App extends React.Component{
     render(){
@@ -31,7 +33,10 @@ export class App extends React.Component{
                 <UncontrolledLogin />
                 </div>
                 <Colors items={[{id:1,name:'Red'}, {id:2,name:'Green'}, {id:3, name:'Blue'}]}/>
-                    <TodoList />
+                <TodoList />
+                <Container title={"Hola, Amigos!"}>
+                    <Message />
+                </Container>
             </div>
             )
     }
