@@ -33,24 +33,30 @@ export class App extends React.Component {
                     <UncontrolledLogin />
                 </div>
                 <Colors items={[{ id: 1, name: 'Red' }, { id: 2, name: 'Green' }, { id: 3, name: 'Blue' }]} />
-                <TodoList render={({ todos, handleTodoUpdate, handleResetButton, handleRemoveButton, _inputRef }) => {
-                    return(
-                    <div class="border border-danger border-3 p-3 m-2 w-25 d-flex flex-column align-items-center justify-content-center">
-                        <ul class="list-group-flush list-group-numbered">
-                            {todos.map((todos, index) => (
-                                <li key={index} class="d-flex flex-row justify-content-between p-1 list-group-item">
-                                {todos}
-                                <button class="btn btn-danger" onClick={() => handleRemoveButton(todos)}>Remove</button>
-                                </li>
-                        ))}
-                    </ul>
-                    <div>
-                        <input class="" ref={_inputRef}></input>
-                        <button class="btn btn-danger" onClick={ handleTodoUpdate}>Aggiungi Chore</button>
-                        <button class="btn btn-danger" type="reset" onClick={handleResetButton}><span class="aligh-self-center">Reset</span></button>
-                    </div>
-                </div>
-                    )}} />
+                <TodoList>
+                    {({ todos, handleTodoUpdate, handleResetButton, handleRemoveButton, _inputRef }) => {
+                        return (
+                            <>
+                                <div class="border border-danger border-3 p-3 m-2 w-25 d-flex flex-column align-items-center justify-content-center">
+                                    <ul class="list-group-flush list-group-numbered">
+                                        {todos.map((todos, index) => (
+                                            <>
+                                            <li key={index} class="d-flex flex-row justify-content-between p-1 list-group-item">
+                                                {todos}
+                                                <button class="btn btn-danger" onClick={() => handleRemoveButton(todos)}>Remove</button>
+                                            </li>
+                                            </>
+                                        ))}
+                                    </ul>
+                                    <div>
+                                        <input class="" ref={_inputRef}></input>
+                                        <button class="btn btn-danger" onClick={handleTodoUpdate}>Aggiungi Chore</button>
+                                        <button class="btn btn-danger" type="reset" onClick={handleResetButton}><span class="aligh-self-center">Reset</span></button>
+                                    </div>
+                                </div>
+                            </>)
+                    }}
+                </TodoList>
 
                 <Container title={"Hola, Amigos!"}>
                     <Message />
