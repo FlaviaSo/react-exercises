@@ -31,6 +31,7 @@ export class TodoList extends React.Component {
 render() {
     return this.props.render({
         todos: this.state.todos,
+        _inputRef: this._inputRef,
         handleTodoUpdate: this.handleTodoUpdate,
         handleResetButton: this.handleResetButton,
         handleRemoveButton: this.handleRemoveButton
