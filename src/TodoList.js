@@ -29,13 +29,17 @@ export class TodoList extends React.Component {
 
 
 render() {
-    return this.props.render({
+    return (
+        <>
+        {this.props.children ({
         todos: this.state.todos,
         _inputRef: this._inputRef,
         handleTodoUpdate: this.handleTodoUpdate,
         handleResetButton: this.handleResetButton,
         handleRemoveButton: this.handleRemoveButton
-    })
+    })}
+    </>
+    );
     /*return (
         <div class="border border-danger border-3 p-3 m-2 w-25 d-flex flex-column align-items-center justify-content-center">
             <ul class="list-group-flush list-group-numbered">
