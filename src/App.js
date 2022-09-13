@@ -84,7 +84,7 @@ export class App extends React.Component {
                         <DisplayLanguage/>
                     </LanguageContext.Provider>
                 </div>
-                <Sum numbers={[1,2,3,4,5]}/>
+                <Sum/>
             </div>
         )
     }
