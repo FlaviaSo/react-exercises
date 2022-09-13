@@ -14,7 +14,7 @@ import { Message } from "./Message"
 import { createContext } from 'react';
 import { DisplayLanguage } from "./DisplayLanguage";
 
-const LanguageContext = createContext('en')
+export const LanguageContext = createContext('en')
 
 export class App extends React.Component {
     state = {
