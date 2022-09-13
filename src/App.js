@@ -11,8 +11,22 @@ import { Colors } from "./Colors"
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { Message } from "./Message"
+import { createContext } from 'react';
+import { DisplayLanguage } from "./DisplayLanguage";
+
+const LanguageContext = createContext('en')
 
 export class App extends React.Component {
+    state = {
+        language: 'en'
+    }
+
+    handleLanguage = e => {
+        this.setState({
+            language: e.target.value
+        })
+    }
+
     render() {
         return (
             <div>
@@ -57,10 +71,18 @@ export class App extends React.Component {
                             </>)
                     }}
                 </TodoList>
-
                 <Container title={"Hola, Amigos!"}>
                     <Message />
                 </Container>
+                <div>
+                    <select value={this.state.language} onChange={this.handleLanguage} name="language">
+                        <option value="en">English</option>
+                        <option value="it">Italiano</option>
+                    </select>
+                    <LanguageContext.Provider value={this.state.language}>
+                        <DisplayLanguage/>
+                    </LanguageContext.Provider>
+                </div>
             </div>
         )
     }
