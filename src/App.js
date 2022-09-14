@@ -14,7 +14,8 @@ import { Message } from "./Message"
 import { createContext } from 'react';
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
-import { Githubuser } from "./GithubUser";
+import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 export const LanguageContext = createContext('en')
 
@@ -65,7 +66,8 @@ export class App extends React.Component {
                     </LanguageContext.Provider>
                 </div>
                 <Sum/>
-                <Githubuser username={"FlaviaSo"}/>
+                <GithubUser username={"FlaviaSo"}/>
+                <GithubUserList/>
             </div>
         )
     }
