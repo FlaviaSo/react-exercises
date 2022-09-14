@@ -1,63 +1,26 @@
-import React from 'react';
-import {CounterDisplay} from './CounterDisplay'
+import React, { useEffect, useState } from 'react';
+import { CounterDisplay } from './CounterDisplay'
 
-export class Counter extends React.Component {
-    state = {
-        count: this.props.initialValue,
-    }
+export function Counter() {
+    const [counter, setCounter] = useState(0);
 
-
-    /*constructor(props){
-        super(props)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounter((x) => x + 1)
+        }, 1000)
         
-
-        setInterval(() => {
-            this.setState(state => ({
-                count:
-                    state.count + this.props.incrementBy >= this.props.incrementBy * 10
-                    ? this.props.initialValue
-                    : state.count + this.props.incrementBy
-            }));
-        }, this.props.timeout);
-    }*/
-
-    componentDidMount(){
-        this.timerId = setInterval(() => this.tick(), 1000);
-    }
-
-    componentWillUnmount(){
-        clearInterval(this.timerId);
-    }
-
-    componentDidUpdate(){
-        if (this.state.count >= this.props.incrementBy * 10){
-            this.setState((state) => ({
-                count: this.props.initialValue,
-            }));
+        return () => {
+            clearInterval(interval)
         }
-    }
+    })
 
-    tick(){
-        this.setState({
-            count: this.state.count + this.props.incrementBy,
-        });
-    }
-
-
-    render(){
-        const CounterStyle = {
-            backgroundColor: '#333',
-            color: 'white',
-            margin: '10px 20px',
-        }
-        return(
-            <>
-            <h1 style={CounterStyle}>
-                <CounterDisplay variabileState={this.state.count}/>
+    return (
+        <>
+            <h1>
+                <CounterDisplay variabileState={counter} />
             </h1>
-            </>
-        )
-    }
+        </>
+    )
 }
 
 //When calling setState to increment the counter, should the parameter be a function or an object? Why?
