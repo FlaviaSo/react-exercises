@@ -16,8 +16,8 @@ export class TodoList extends React.Component {
   };
 
   handleResetButton = e =>{
-    this.setState((state) => ({
-        todos: (state.todos = [""])
+    this.setState(() => ({
+        todos: []
     }))
   }
 
