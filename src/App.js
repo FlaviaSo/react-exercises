@@ -20,7 +20,7 @@ export class App extends React.Component{
                 <InteractiveWelcome />
                 </div>
                 <div>
-                <Login />
+                <Login onLogin={this.onLogin}/>
                 </div>
             </div>
             )
