@@ -16,6 +16,7 @@ import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
+import { Formino } from "./Form";
 
 export const LanguageContext = createContext('en')
 
@@ -68,6 +69,7 @@ export class App extends React.Component {
                 <Sum/>
                 <GithubUser username={"FlaviaSo"}/>
                 <GithubUserList/>
+                <Formino/>
             </div>
         )
     }
