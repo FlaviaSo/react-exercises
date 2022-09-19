@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Hello } from './Hello';
 import { Welcome } from './Welcome';
 import { Counter } from './Counter'
@@ -13,27 +13,36 @@ import { Container } from "./Container";
 import { Message } from "./Message"
 import { createContext } from 'react';
 import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
+import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
+import { Formino } from "./Form";
+import { CarDetails } from "./CarDetails";
+import { UseCounterHook } from "./UseCounterHook"
+import { FilteredList } from "./FilteredList"
 
 export const LanguageContext = createContext('en')
 
-export class App extends React.Component {
-    state = {
-        language: 'en'
+export function App() {
+    const [lang, setLang] = useState('en')
+
+    function handleLanguage(e){
+        setLang(e.target.value)
     }
 
-    handleLanguage = e => {
-        this.setState({
-            language: e.target.value
-        })
-    }
+    const list = [
+        {id:1, name:'Flavia', age:"27"},
+        {id:2, name:'Pippo', age:"12"},
+        {id:3, name:'Pluto', age:"36"}
+    ]
 
-    render() {
+
         return (
             <div>
                 <Hello />
-                <Welcome name={"Flavia"} age={27} />
+                <Welcome/>
                 <Counter initialValue={0} incrementBy={1} timeout={1000} />
-                <ClickCounter />
+                <ClickCounter/>
                 <ClickTracker />
                 <div>
                     <br></br>
@@ -47,47 +56,32 @@ export class App extends React.Component {
                     <UncontrolledLogin />
                 </div>
                 <Colors items={[{ id: 1, name: 'Red' }, { id: 2, name: 'Green' }, { id: 3, name: 'Blue' }]} />
-                <TodoList>
-                    {({ todos, handleTodoUpdate, handleResetButton, handleRemoveButton, _inputRef }) => {
-                        return (
-                            <>
-                                <div class="border border-danger border-3 p-3 m-2 w-25 d-flex flex-column align-items-center justify-content-center">
-                                    <ul class="list-group-flush list-group-numbered">
-                                        {todos.map((todos, index) => (
-                                            <>
-                                            <li key={index} class="d-flex flex-row justify-content-between p-1 list-group-item">
-                                                {todos}
-                                                <button class="btn btn-danger" onClick={() => handleRemoveButton(todos)}>Remove</button>
-                                            </li>
-                                            </>
-                                        ))}
-                                    </ul>
-                                    <div>
-                                        <input class="" ref={_inputRef}></input>
-                                        <button class="btn btn-danger" onClick={handleTodoUpdate}>Aggiungi Chore</button>
-                                        <button class="btn btn-danger" type="reset" onClick={handleResetButton}><span class="aligh-self-center">Reset</span></button>
-                                    </div>
-                                </div>
-                            </>)
-                    }}
-                </TodoList>
+                <div>
+                    <TodoList/>
+                </div>
                 <Container title={"Hola, Amigos!"}>
                     <Message />
                 </Container>
                 <div>
-                    <select value={this.state.language} onChange={this.handleLanguage} name="language">
+                    <select onChange={handleLanguage} name="language">
                         <option value="en">English</option>
                         <option value="it">Italiano</option>
                     </select>
-                    <LanguageContext.Provider value={this.state.language}>
+                    <LanguageContext.Provider value={lang}>
                         <DisplayLanguage/>
                     </LanguageContext.Provider>
                 </div>
+                <Sum/>
+                <GithubUser username={"FlaviaSo"}/>
+                <GithubUserList/>
+                <Formino/>
+                <CarDetails initialValue={{brand:"Fiat", model:"Panda 750", year:"1987", color:"red", price:"4500€"}}/>
+                <UseCounterHook />
+                <FilteredList list={list}/>
             </div>
         )
     }
 
-}
 
 
 //Component-08
