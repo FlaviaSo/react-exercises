@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Hello } from './Hello';
 import { Welcome } from './Welcome';
 import { Counter } from './Counter'
@@ -21,18 +21,14 @@ import { CarDetails } from "./CarDetails";
 
 export const LanguageContext = createContext('en')
 
-export class App extends React.Component {
-    state = {
-        language: 'en'
+export function App() {
+    const [lang, setLang] = useState('en')
+
+    function handleLanguage(e){
+        setLang(e.target.value)
     }
 
-    handleLanguage = e => {
-        this.setState({
-            language: e.target.value
-        })
-    }
 
-    render() {
         return (
             <div>
                 <Hello />
@@ -59,11 +55,11 @@ export class App extends React.Component {
                     <Message />
                 </Container>
                 <div>
-                    <select value={this.state.language} onChange={this.handleLanguage} name="language">
+                    <select onChange={handleLanguage} name="language">
                         <option value="en">English</option>
                         <option value="it">Italiano</option>
                     </select>
-                    <LanguageContext.Provider value={this.state.language}>
+                    <LanguageContext.Provider value={lang}>
                         <DisplayLanguage/>
                     </LanguageContext.Provider>
                 </div>
@@ -76,7 +72,6 @@ export class App extends React.Component {
         )
     }
 
-}
 
 
 //Component-08
