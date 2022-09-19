@@ -19,6 +19,7 @@ import { GithubUserList } from "./GithubUserList";
 import { Formino } from "./Form";
 import { CarDetails } from "./CarDetails";
 import { UseCounterHook } from "./UseCounterHook"
+import { FilteredList } from "./FilteredList"
 
 export const LanguageContext = createContext('en')
 
@@ -28,6 +29,12 @@ export function App() {
     function handleLanguage(e){
         setLang(e.target.value)
     }
+
+    const list = [
+        {id:1, name:'Flavia', age:"27"},
+        {id:2, name:'Pippo', age:"12"},
+        {id:3, name:'Pluto', age:"36"}
+    ]
 
 
         return (
@@ -70,6 +77,7 @@ export function App() {
                 <Formino/>
                 <CarDetails initialValue={{brand:"Fiat", model:"Panda 750", year:"1987", color:"red", price:"4500€"}}/>
                 <UseCounterHook />
+                <FilteredList list={list}/>
             </div>
         )
     }
