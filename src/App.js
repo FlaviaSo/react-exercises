@@ -17,6 +17,7 @@ import { Sum } from "./Sum";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { Formino } from "./Form";
+import { CarDetails } from "./CarDetails";
 
 export const LanguageContext = createContext('en')
 
@@ -70,6 +71,7 @@ export class App extends React.Component {
                 <GithubUser username={"FlaviaSo"}/>
                 <GithubUserList/>
                 <Formino/>
+                <CarDetails initialValue={{brand:"Fiat", model:"Panda 750", year:"1987", color:"red", price:"4500€"}}/>
             </div>
         )
     }
