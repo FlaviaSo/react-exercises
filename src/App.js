@@ -18,6 +18,7 @@ import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 import { Formino } from "./Form";
 import { CarDetails } from "./CarDetails";
+import { UseCounterHook } from "./UseCounterHook"
 
 export const LanguageContext = createContext('en')
 
@@ -68,6 +69,7 @@ export function App() {
                 <GithubUserList/>
                 <Formino/>
                 <CarDetails initialValue={{brand:"Fiat", model:"Panda 750", year:"1987", color:"red", price:"4500€"}}/>
+                <UseCounterHook />
             </div>
         )
     }
